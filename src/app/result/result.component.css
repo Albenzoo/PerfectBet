@@ -1,0 +1,26 @@
+.mainAccordion{
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+.animation{
+    -webkit-transition: 10s ease-in;
+    -moz-transition: 10s ease-in;
+     -ms-transition: 10s ease-in;
+      -o-transition: 10s ease-in;
+         transition: 10s ease-in;
+}
+table {
+    width: 100%;
+  }
+
+
+  .series{
+      padding-right: 10px;
+      flex-grow: 0;
+  }
+
+.perfectbet{
+    padding-bottom: 50px;
+}
