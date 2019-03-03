@@ -14,8 +14,14 @@
 table {
     width: 100%;
   }
+  .spinner{
+      padding-top: 20px;
+  }
 
 
+  .result{
+      margin-top: 30px;
+  }
   .series{
       padding-right: 10px;
       flex-grow: 0;

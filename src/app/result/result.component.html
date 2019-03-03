@@ -1,9 +1,11 @@
 <!-- Section 3 -->
 
 
-<div *ngIf="httpService.showResult" [fxLayout]="direction" fxLayoutAlign="center center">
+<div  [fxLayout]="direction" fxLayoutAlign="center center" class="result">
+<mat-spinner class="spinnner" *ngIf="httpService.loading==true"></mat-spinner>
+
 <!--   <div (showResult)="generateTable()">one</div> -->
-  <div>
+  <div *ngIf="httpService.showResult">
 
 
 

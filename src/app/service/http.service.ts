@@ -16,6 +16,7 @@ export class HttpService {
   call = "";
   response = "";
   showResult = false;
+  loading = null;
   // https://api.the-odds-api.com/v3/odds/?apiKey=fcb1bb836f62249fc048b1c0df79f0cc&sport=soccer_epl&region=uk
   
 

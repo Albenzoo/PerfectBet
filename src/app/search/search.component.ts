@@ -32,6 +32,7 @@ export interface sport {
 export class SearchComponent implements OnInit {
 
   @Input() myResult: ResultComponent;
+  noMatchFound:boolean = null;
 
 
   sports: sport[] = [
@@ -95,15 +96,26 @@ export class SearchComponent implements OnInit {
 
   search() {
     console.log("Start Searching...");
+    this.httpService.loading = true;
+
     //let apiResult = this.httpService.getMatch();
 
     this.httpService.getMatch()
       // resp is of type `HttpResponse<Config>`
       .subscribe((data: any) => {
         let apiResult = data.data;
+        if (apiResult.length == 0) {
+          this.noMatchFound = true;
+          this.httpService.showResult = false;
+          this.httpService.loading = false;
+          return;
+        }
+        this.noMatchFound = false;
         this.myResult.updateResult(apiResult);
+        this.httpService.showResult = true;
+        this.httpService.loading = false;
       });
-    this.httpService.showResult = true;
+
   }
 
 

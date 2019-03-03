@@ -29,6 +29,11 @@ export class ResultComponent implements OnInit {
   public updateResult(apiResponse: any) {
     this.allMatches = apiResponse;
 
+    if(!this.allMatches){
+      this.httpService.showResult == false;
+      this.httpService.loading == false;
+    }
+
     //cicle the matches
     for (let currentMatch of this.allMatches) {
       //store home team (e.g. AC Milan - Juventus ---> Milan) 
