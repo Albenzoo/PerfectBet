@@ -5,7 +5,7 @@
 <mat-spinner class="spinnner" *ngIf="httpService.loading==true"></mat-spinner>
 
 <!--   <div (showResult)="generateTable()">one</div> -->
-  <div *ngIf="httpService.showResult">
+  <div class="setwidth" *ngIf="httpService.showResult">
 
 
 
@@ -33,30 +33,30 @@
           
           <div class="perfectbet">
     
-          <table mat-table [dataSource]="match.perfectBet" matSort (matSortChange)="sortData($event, match.percfectBet, i)" class="mat-elevation-z8">
+          <table mat-table [dataSource]="match.perfectBet" matSort (matSortChange)="sortPerfectBetData($event, match.perfectBet, i)" class="mat-elevation-z8">
     
             <!-- Company Column -->
             <ng-container matColumnDef="company">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header="company"> Company </th>
+              <th mat-header-cell *matHeaderCellDef mat-header="company"> Company </th>
               <td mat-cell *matCellDef="let element"> {{element.companyHome}} - {{element.companyX}} - {{element.companyAway}}</td>
             </ng-container>
       
             <!-- 1 Column -->
             <ng-container matColumnDef="home">
               <th mat-header-cell *matHeaderCellDef mat-sort-header="home"> 1 </th>
-              <td mat-cell *matCellDef="let element"> {{element.home}} </td>
+              <td class="padd-right" mat-cell *matCellDef="let element"> {{element.home}} </td>
             </ng-container>
       
             <!-- X Column -->
             <ng-container matColumnDef="X">
               <th mat-header-cell *matHeaderCellDef mat-sort-header="X">X </th>
-              <td mat-cell *matCellDef="let element"> {{element.X}} </td>
+              <td class="padd-right" mat-cell *matCellDef="let element"> {{element.X}} </td>
             </ng-container>
       
             <!-- 2 Column -->
             <ng-container matColumnDef="away">
               <th mat-header-cell *matHeaderCellDef mat-sort-header="away"> 2 </th>
-              <td mat-cell *matCellDef="let element"> {{element.away}} </td>
+              <td class="padd-right" mat-cell *matCellDef="let element"> {{element.away}} </td>
             </ng-container>
       
             <!-- Prob 1 Column -->

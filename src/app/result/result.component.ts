@@ -29,7 +29,7 @@ export class ResultComponent implements OnInit {
   public updateResult(apiResponse: any) {
     this.allMatches = apiResponse;
 
-    if(!this.allMatches){
+    if (!this.allMatches) {
       this.httpService.showResult == false;
       this.httpService.loading == false;
     }
@@ -164,6 +164,7 @@ export class ResultComponent implements OnInit {
 
   sortData(sort: Sort, currentOdd: odds[], index: number) {
     const data = currentOdd.slice();
+
     if (!sort.active || sort.direction === '') {
       this.myMatches[index].odds = data;
       return;
@@ -173,6 +174,31 @@ export class ResultComponent implements OnInit {
       const isAsc = sort.direction === 'asc';
       switch (sort.active) {
         case 'company': return compare(a.company, b.company, isAsc);
+        case 'home': return compare(a.home, b.home, isAsc);
+        case 'X': return compare(a.X, b.X, isAsc);
+        case 'away': return compare(a.away, b.away, isAsc);
+        case 'probHome': return compare(a.probHome, b.probHome, isAsc);
+        case 'probX': return compare(a.probX, b.probX, isAsc);
+        case 'probAway': return compare(a.probAway, b.probAway, isAsc);
+        case 'probSum': return compare(a.probSum, b.probSum, isAsc);
+        default: return 0;
+      }
+    });
+  }
+
+
+  sortPerfectBetData(sort: Sort, currentOdd: perfectBet[], index: number) {
+    const data = currentOdd.slice();
+
+    if (!sort.active || sort.direction === '') {
+      this.myMatches[index].perfectBet = data;
+      return;
+    }
+
+    this.myMatches[index].perfectBet = data.sort((a, b) => {
+      const isAsc = sort.direction === 'asc';
+      switch (sort.active) {
+        //case 'company': return compare(a.company, b.company, isAsc);
         case 'home': return compare(a.home, b.home, isAsc);
         case 'X': return compare(a.X, b.X, isAsc);
         case 'away': return compare(a.away, b.away, isAsc);

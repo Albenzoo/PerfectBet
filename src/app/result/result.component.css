@@ -1,7 +1,15 @@
 .mainAccordion{
     margin-top: 5px;
     margin-bottom: 5px;
+    
 
+}
+.padd-right{
+    padding-right: 15px;
+}
+
+.setwidth{
+    width: 88%;
 }
 
 .animation{
