@@ -8,6 +8,29 @@
     padding-right: 15px;
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+  }
+.center2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+  }
+  .star{
+    width: 10px;
+    height: 10px;
+  }
+.gold{
+    background: #ffd7001a;
+}
+.adjustColour{
+    background: #f3f2f2;
+
+}
 .setwidth{
     width: 88%;
 }

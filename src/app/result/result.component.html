@@ -1,28 +1,25 @@
 <!-- Section 3 -->
 
 
-<div  [fxLayout]="direction" fxLayoutAlign="center center" class="result">
-<mat-spinner class="spinnner" *ngIf="httpService.loading==true"></mat-spinner>
+<div [fxLayout]="direction" fxLayoutAlign="center center" class="result">
+  <mat-spinner class="spinnner" *ngIf="httpService.loading==true"></mat-spinner>
 
-<!--   <div (showResult)="generateTable()">one</div> -->
+  <!--   <div (showResult)="generateTable()">one</div> -->
   <div class="setwidth" *ngIf="httpService.showResult">
-
-
-
-
-
 
     <mat-accordion class="animation" *ngFor="let match of myMatches; let i=index;">
       <mat-expansion-panel class="mainAccordion">
         <mat-expansion-panel-header>
           <mat-panel-title>
             {{ match.homeTeam}} - {{match.awayTeam}}
+            <img *ngIf="match.perfectBet.length != 0" src="../..\assets\star.png" alt="Perfect Bet available!"
+              class="star">
           </mat-panel-title>
           <mat-panel-description class="series">
             {{ match.series }}
           </mat-panel-description>
         </mat-expansion-panel-header>
-    
+
         <!--     <mat-form-field>
             <input matInput placeholder="First name">
           </mat-form-field>
@@ -30,137 +27,143 @@
           <mat-form-field>
             <input matInput placeholder="Age">
           </mat-form-field> -->
-          
-          <div class="perfectbet">
-    
-          <table mat-table [dataSource]="match.perfectBet" matSort (matSortChange)="sortPerfectBetData($event, match.perfectBet, i)" class="mat-elevation-z8">
-    
+
+        <div *ngIf="match.perfectBet.length != 0" class="perfectbet">
+
+
+
+          <h3 class="center">Perfect Bets</h3>
+          <table mat-table [dataSource]="match.perfectBet" matSort
+            (matSortChange)="sortPerfectBetData($event, match.perfectBet, i)" class="mat-elevation-z8 gold">
+
             <!-- Company Column -->
             <ng-container matColumnDef="company">
               <th mat-header-cell *matHeaderCellDef mat-header="company"> Company </th>
-              <td mat-cell *matCellDef="let element"> {{element.companyHome}} - {{element.companyX}} - {{element.companyAway}}</td>
+              <td mat-cell *matCellDef="let element"> {{element.companyHome}} - {{element.companyX}} -
+                {{element.companyAway}}</td>
             </ng-container>
-      
+
             <!-- 1 Column -->
             <ng-container matColumnDef="home">
               <th mat-header-cell *matHeaderCellDef mat-sort-header="home"> 1 </th>
               <td class="padd-right" mat-cell *matCellDef="let element"> {{element.home}} </td>
             </ng-container>
-      
+
             <!-- X Column -->
             <ng-container matColumnDef="X">
               <th mat-header-cell *matHeaderCellDef mat-sort-header="X">X </th>
               <td class="padd-right" mat-cell *matCellDef="let element"> {{element.X}} </td>
             </ng-container>
-      
+
             <!-- 2 Column -->
             <ng-container matColumnDef="away">
               <th mat-header-cell *matHeaderCellDef mat-sort-header="away"> 2 </th>
               <td class="padd-right" mat-cell *matCellDef="let element"> {{element.away}} </td>
             </ng-container>
-      
+
             <!-- Prob 1 Column -->
             <ng-container matColumnDef="probHome">
               <th mat-header-cell *matHeaderCellDef mat-sort-header="probHome"> Prob. 1 %</th>
               <td mat-cell *matCellDef="let element"> {{element.probHome | number}} </td>
             </ng-container>
-      
+
             <!-- Prob X Column -->
             <ng-container matColumnDef="probX">
               <th mat-header-cell *matHeaderCellDef mat-sort-header="probX"> Prob. X %</th>
               <td mat-cell *matCellDef="let element"> {{element.probX | number}} </td>
             </ng-container>
-      
+
             <!-- Prob 2 Column -->
             <ng-container matColumnDef="probAway">
               <th mat-header-cell *matHeaderCellDef mat-sort-header="probAway"> Prob. 2 %</th>
               <td mat-cell *matCellDef="let element"> {{element.probAway | number}} </td>
             </ng-container>
-      
+
             <!-- Sum Column -->
             <ng-container matColumnDef="probSum">
               <th mat-header-cell *matHeaderCellDef mat-sort-header="probSum"> Sum %</th>
               <td mat-cell *matCellDef="let element"> {{element.probSum | number}} </td>
             </ng-container>
-      
+
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>
-    
+
         </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="oddstable">
-    
-        <table mat-table [dataSource]="match.odds" matSort (matSortChange)="sortData($event, match.odds, i)" class="mat-elevation-z8">
-    
-          <!-- Company Column -->
-          <ng-container matColumnDef="company">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header="company"> Company </th>
-            <td mat-cell *matCellDef="let element"> {{element.company}} </td>
-          </ng-container>
-    
-          <!-- 1 Column -->
-          <ng-container matColumnDef="home">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header="home"> 1 </th>
-            <td mat-cell *matCellDef="let element"> {{element.home}} </td>
-          </ng-container>
-    
-          <!-- X Column -->
-          <ng-container matColumnDef="X">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header="X">X </th>
-            <td mat-cell *matCellDef="let element"> {{element.X}} </td>
-          </ng-container>
-    
-          <!-- 2 Column -->
-          <ng-container matColumnDef="away">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header="away"> 2 </th>
-            <td mat-cell *matCellDef="let element"> {{element.away}} </td>
-          </ng-container>
-    
-          <!-- Prob 1 Column -->
-          <ng-container matColumnDef="probHome">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header="probHome"> Prob. 1 %</th>
-            <td mat-cell *matCellDef="let element"> {{element.probHome | number}} </td>
-          </ng-container>
-    
-          <!-- Prob X Column -->
-          <ng-container matColumnDef="probX">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header="probX"> Prob. X %</th>
-            <td mat-cell *matCellDef="let element"> {{element.probX | number}} </td>
-          </ng-container>
-    
-          <!-- Prob 2 Column -->
-          <ng-container matColumnDef="probAway">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header="probAway"> Prob. 2 %</th>
-            <td mat-cell *matCellDef="let element"> {{element.probAway | number}} </td>
-          </ng-container>
-    
-          <!-- Sum Column -->
-          <ng-container matColumnDef="probSum">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header="probSum"> Sum %</th>
-            <td mat-cell *matCellDef="let element"> {{element.probSum | number}} </td>
-          </ng-container>
-    
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-    
-      </div>
+
+
+
+
+
+
+
+
+        <div class="oddstable">
+          <h3 class="center2">Match Information</h3>
+          <table mat-table [dataSource]="match.odds" matSort (matSortChange)="sortData($event, match.odds, i)"
+            class="mat-elevation-z8 adjustColour">
+
+            <!-- Company Column -->
+            <ng-container matColumnDef="company">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header="company"> Company </th>
+              <td mat-cell *matCellDef="let element"> {{element.company}} </td>
+            </ng-container>
+
+            <!-- 1 Column -->
+            <ng-container matColumnDef="home">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header="home"> 1 </th>
+              <td mat-cell *matCellDef="let element"> {{element.home}} </td>
+            </ng-container>
+
+            <!-- X Column -->
+            <ng-container matColumnDef="X">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header="X">X </th>
+              <td mat-cell *matCellDef="let element"> {{element.X}} </td>
+            </ng-container>
+
+            <!-- 2 Column -->
+            <ng-container matColumnDef="away">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header="away"> 2 </th>
+              <td mat-cell *matCellDef="let element"> {{element.away}} </td>
+            </ng-container>
+
+            <!-- Prob 1 Column -->
+            <ng-container matColumnDef="probHome">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header="probHome"> Prob. 1 %</th>
+              <td mat-cell *matCellDef="let element"> {{element.probHome | number}} </td>
+            </ng-container>
+
+            <!-- Prob X Column -->
+            <ng-container matColumnDef="probX">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header="probX"> Prob. X %</th>
+              <td mat-cell *matCellDef="let element"> {{element.probX | number}} </td>
+            </ng-container>
+
+            <!-- Prob 2 Column -->
+            <ng-container matColumnDef="probAway">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header="probAway"> Prob. 2 %</th>
+              <td mat-cell *matCellDef="let element"> {{element.probAway | number}} </td>
+            </ng-container>
+
+            <!-- Sum Column -->
+            <ng-container matColumnDef="probSum">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header="probSum"> Sum %</th>
+              <td mat-cell *matCellDef="let element"> {{element.probSum | number}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+        </div>
       </mat-expansion-panel>
-    
-    
-    
-    
-    
-    
-    <!--   <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+
+
+
+
+
+
+      <!--   <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
           <mat-panel-title>
             Self aware panel
@@ -187,16 +190,3 @@
 
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-

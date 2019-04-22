@@ -2,10 +2,16 @@
     padding-right: 5%;
     
 } */
-.region{
-    
 
-}
+    
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 200px;
+    width: 200px;
+  }
 .research{
     /* background-color: lightblue; */
      margin-right: 5px;

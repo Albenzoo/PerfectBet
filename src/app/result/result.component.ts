@@ -15,6 +15,7 @@ export class ResultComponent implements OnInit {
   lock = false;
   dataSource;
   sortedData: odds[];
+  arePerfectBetsFound = false;
 
   myMatches: matchBets[] = new Array;
   /* oddsArray: odds[] = new Array; */

@@ -58,7 +58,7 @@ export class SearchComponent implements OnInit {
         { value: 'soccer_usa_mls', viewValue: 'MLS' },
       ]
     },
-    {
+    /* {
       name: 'NBA',
       championships: [
         { value: 'squirtle-3', viewValue: 'Squirtle' },
@@ -81,7 +81,7 @@ export class SearchComponent implements OnInit {
         { value: 'mew-9', viewValue: 'Mew' },
         { value: 'mewtwo-10', viewValue: 'Mewtwo' },
       ]
-    }
+    } */
   ];
 
   constructor(private httpService: HttpService) { }
