@@ -10,8 +10,8 @@
             <div class="list">                         
                           
                 <mat-form-field>
-                    <mat-select placeholder="" name="tournament" [(ngModel)]="tournament" (ngModelChange)="onSelectedTournament($event)">
-                        <mat-option>-- None --</mat-option>
+                    <mat-select placeholder="Championship" name="tournament" [(ngModel)]="tournament" (ngModelChange)="onSelectedTournament($event)">
+                        <!-- <mat-option>-- None --</mat-option> -->
                         <mat-optgroup *ngFor="let singleSport of sports" [label]="singleSport.name" [disabled]="singleSport.disabled">
                             <mat-option *ngFor="let singleChampionship of singleSport.championships" [value]="singleChampionship.value">
                                 {{singleChampionship.viewValue}}
@@ -31,7 +31,7 @@
 <!--             <button mat-fab (click)="search()" routerLink="/result">
                 <mat-icon aria-label="search icon">search</mat-icon>
             </button> -->
-            <button mat-fab (click)="search()">
+            <button mat-fab (click)="search()" [disabled]="!this.httpService.mySeries || !this.httpService.myRegion">
                 <mat-icon aria-label="search icon">search</mat-icon>
             </button>
             

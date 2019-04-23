@@ -13,12 +13,15 @@
     margin-left: auto;
     margin-right: auto;
     width: 100px;
+    margin-top: 0px;
+
   }
 .center2 {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 150px;
+    margin-top: 0px;
   }
   .star{
     width: 10px;

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatProgressSpinnerModule, MatButtonModule,MatFormFieldModule,MatIconModule, MatCheckboxModule,MatButtonToggleModule,MatSelectModule, MatListModule, MatToolbarModule, MatInputModule, MatCardModule, MatTreeModule, MatTable, MatTableModule, MatExpansionModule, MatSortModule, MatProgressSpinner} from '@angular/material';
+import {MatProgressSpinnerModule, MatButtonModule,MatFormFieldModule,MatIconModule, MatCheckboxModule,MatButtonToggleModule,MatSelectModule, MatListModule, MatToolbarModule, MatInputModule, MatCardModule, MatTreeModule, MatTable, MatTableModule, MatExpansionModule, MatSortModule, MatProgressSpinner, MatMenuModule} from '@angular/material';
 
 
 import { AppComponent } from './app.component';
@@ -42,6 +42,7 @@ const appRoutes: Routes = [
       FlexLayoutModule,
       MatTableModule,
       MatTreeModule,
+      MatMenuModule,
       MatListModule,
       MatSelectModule,
       FormsModule,
