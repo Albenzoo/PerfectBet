@@ -3,18 +3,28 @@
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-      <mat-icon>dialpad</mat-icon>
-      <span>Redial</span>
-    </button>
-    <button mat-menu-item disabled>
-      <mat-icon>voicemail</mat-icon>
-      <span>Check voicemail</span>
-    </button>
-    <button mat-menu-item>
-      <mat-icon>notifications_off</mat-icon>
-      <span>Disable alerts</span>
-    </button>
+
+
+
+      
+          <mat-form-field appearance="outline" menuOpen="true" (click)="$event.stopPropagation();">
+            <mat-label>API Key</mat-label>
+            <input matInput placeholder="Write here your key">
+            <!-- <mat-icon matSuffix class="fas fa-check-circle">check-circle</mat-icon> -->
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+          <button mat-button class="goRight" (click)="$event.stopPropagation();">Set</button>
+
+        
+
+
+
+
+
+        <mat-slide-toggle (click)="$event.stopPropagation();">Slide me!</mat-slide-toggle>
+  
+
+
   </mat-menu>
 <div [fxLayout]="direction" fxLayoutAlign="center center">
     <img class="logo" src="../..\assets\logoPerfectBet.png" alt="PerfectBet">
