@@ -32,7 +32,7 @@ export interface sport {
 export class SearchComponent implements OnInit {
 
   @Input() myResult: ResultComponent;
-  noMatchFound:boolean = null;
+  noMatchFound: boolean = null;
 
 
   sports: sport[] = [
@@ -114,6 +114,10 @@ export class SearchComponent implements OnInit {
         this.myResult.updateResult(apiResult);
         this.httpService.showResult = true;
         this.httpService.loading = false;
+      }, (err) => {
+        console.log("API call failed", err);
+        this.httpService.loading = false;
+
       });
 
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../service/http.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private httpService: HttpService) { }
+
+  saveKey(inputKey: string) {
+    console.log("key: ", inputKey);
+    if (inputKey == "mysecretkey") {
+      this.httpService.useMyKey = true;
+    } else {
+      this.httpService.key = inputKey;
+    }
+  }
 
   ngOnInit() {
   }

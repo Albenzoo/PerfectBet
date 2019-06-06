@@ -7,6 +7,18 @@ padding-bottom: 2%;
     
 }
 
+
+.paddingMe{
+    margin-left: 25px;
+}
+.restyling{
+overflow: hidden !important;
+}
+
 .goRight{
     float: right;
+}
+
+#right-button{
+    position: absolute;
 }

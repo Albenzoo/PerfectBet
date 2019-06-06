@@ -1,32 +1,34 @@
 <!-- Section 1 -->
 <button mat-icon-button [matMenuTriggerFor]="menu" class="goRight">
-    <mat-icon>more_vert</mat-icon>
-  </button>
-  <mat-menu #menu="matMenu">
+  <mat-icon>more_vert</mat-icon>
+</button>
 
-
-
-      
-          <mat-form-field appearance="outline" menuOpen="true" (click)="$event.stopPropagation();">
-            <mat-label>API Key</mat-label>
-            <input matInput placeholder="Write here your key">
-            <!-- <mat-icon matSuffix class="fas fa-check-circle">check-circle</mat-icon> -->
-            <!-- <mat-hint>Hint</mat-hint> -->
-          </mat-form-field>
-          <button mat-button class="goRight" (click)="$event.stopPropagation();">Set</button>
-
-        
+<mat-menu #menu="matMenu">
 
 
 
 
+  <mat-form-field class="paddingMe" appearance="outline" menuOpen="true" (click)="$event.stopPropagation();">
+    <mat-label>API Key</mat-label>
+    <input matInput placeholder="Write here your key" #keyValue>
+    <!-- <mat-icon matSuffix class="fas fa-check-circle">check-circle</mat-icon> -->
+    <!-- <mat-hint>Hint</mat-hint> -->
+    <button mat-button id="right-button" (click)="saveKey(keyValue.value)">Set</button>
 
-        <mat-slide-toggle (click)="$event.stopPropagation();">Slide me!</mat-slide-toggle>
-  
+  </mat-form-field>
 
 
-  </mat-menu>
+
+
+
+
+
+  <mat-slide-toggle (click)="$event.stopPropagation();">Slide me!</mat-slide-toggle>
+
+
+
+</mat-menu>
 <div [fxLayout]="direction" fxLayoutAlign="center center">
-    <img class="logo" src="../..\assets\logoPerfectBet.png" alt="PerfectBet">
+  <img class="logo" src="../..\assets\logoPerfectBet.png" alt="PerfectBet">
 
 </div>
