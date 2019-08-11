@@ -30,6 +30,8 @@ export interface sport {
 
 
 export class SearchComponent implements OnInit {
+  region:any;
+  tournament:any;
 
   @Input() myResult: ResultComponent;
   noMatchFound: boolean = null;
@@ -84,7 +86,7 @@ export class SearchComponent implements OnInit {
     } */
   ];
 
-  constructor(private httpService: HttpService) { }
+  constructor(public httpService: HttpService) { }
 
   public selectedTournament(result: any) {
     console.log(result);

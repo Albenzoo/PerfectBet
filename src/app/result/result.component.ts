@@ -24,7 +24,7 @@ export class ResultComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
 
-  constructor(private httpService: HttpService) { }
+  constructor(public httpService: HttpService) { }
 
 
   public updateResult(apiResponse: any) {
