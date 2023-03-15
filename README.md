@@ -1,5 +1,34 @@
 # PerfectBet
 
+Angular web app for Football betting arbitrage, also known as surebet, is a betting technique that aims to make a profit regardless of the outcome of a match. This is done by betting on all available options through multiple bookmakers, exploiting the differences in odds between them.
+
+For example, suppose there are three bookmakers offering the following odds for a football match:
+
+Team A: 2.75
+Team B: 5.4
+Draw: 3.3
+In this case, it is possible to bet on all options to guarantee a profit regardless of the outcome of the match.
+
+How does football betting arbitrage work?
+
+Football betting arbitrage works by betting on all available options through multiple bookmakers. This is done by exploiting the differences in odds between them, so that the amount of bets is balanced to ensure a profit regardless of the outcome of the match.
+
+For example, if you want to bet €207 on the aforementioned football match, you could bet €100 on Team A, €60 on Team B, and €47 on the Draw. In this way, regardless of the outcome of the match, you would make a profit.
+
+
+How do you calculate the amount to bet on each option?
+
+To calculate the amount to bet on each option and ensure a profit regardless of the outcome of the match, you can use the arbitrage formula:
+
+[(1/Odds Team A) + (1/Odds Team B) + (1/Odds Draw)] x 100 = Percentage of bets needed to ensure a profit
+
+In the example above:
+[(1/2.75) + (1/5.4) + (1/3.3)] x 100 = 85.17%
+
+Thus, as long as the value you will get in total does not exceed 100%, this means that the options you are offered are worth your while.
+Now, let’s assume that you have decided to wager as much as 100€. In order to estimate the size of your arbitrage bet with each of the bookmakers, you need to multiply your overall stake by the implied probability of each of the bookies. Then, you need to divide the value you have got by the value of the combined market margin. In other words, the formula you need to follow looks like this: (the amount which is intended for soccer betting x the implied probability of the bookie) / total market margin.
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.4.
 
 ## Development server
