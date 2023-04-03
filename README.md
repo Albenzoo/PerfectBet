@@ -1,6 +1,5 @@
-# PerfectBet
-
-Angular web app for Football betting arbitrage, also known as surebet, is a betting technique that aims to make a profit regardless of the outcome of a match. This is done by betting on all available options through multiple bookmakers, exploiting the differences in odds between them.
+# PerfectBet :soccer: :moneybag:
+PerfectBet, an Angular web app designed to help users identify profitable football bet arbitrage opportunities, fetches odds from various bookmakers and compares them to find discrepancies that provide a risk-free way to bet on all possible outcomes of a match and still generate profit. This technique, commonly known as surebet, aims to make a profit regardless of the outcome of a match by betting on all available options through multiple bookmakers and exploiting the differences in odds between them.
 
 For example, suppose there are three bookmakers offering the following odds for a football match:
 
@@ -29,31 +28,48 @@ Thus, as long as the value you will get in total does not exceed 100%, this mean
 Now, let’s assume that you have decided to wager as much as 100€. In order to estimate the size of your arbitrage bet with each of the bookmakers, you need to multiply your overall stake by the implied probability of each of the bookies. Then, you need to divide the value you have got by the value of the combined market margin. In other words, the formula you need to follow looks like this: (the amount which is intended for soccer betting x the implied probability of the bookie) / total market margin.
 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.4.
+## Features :rocket: 
+- :mag_right: Scan and compare odds from multiple bookmakers
+- :chart_with_upwards_trend: Real-time updates for live matches and odds
+- :wrench: Customizable filters for preferred leagues and bookmakers
+- :desktop_computer: Mobile and desktop-friendly design
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Prerequisites
 
-## Code scaffolding
+- [Node.js](https://nodejs.org/en/)
+- [Angular CLI](https://cli.angular.io/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Installation
 
-## Build
+1. Clone the repository:
+git clone https://github.com/Albenzoo/PerfectBet.git
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+2. Navigate to the project directory:
+cd PerfectBet
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+3. Install the required dependencies:
+npm install
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+4. Start the development server:
+ng serve
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+The app should now be running on `http://localhost:4200/`.
+
+## Contributing
+
+I welcome contributions to PerfectBet! If you'd like to contribute, please follow these steps:
+
+1. Fork the repository
+2. Create a new branch for your feature or bugfix (`git checkout -b feature/YourFeature` or `git checkout -b bugfix/YourBugfix`)
+3. Commit your changes (`git commit -m 'Add your feature or bugfix description'`)
+4. Push the branch to your fork (`git push origin feature/YourFeature` or `git push origin bugfix/YourBugfix`)
+5. Open a pull request from your fork to the main repository
 
 ## deploy on github pages
 Set gh-pages to be the brach to build from in repo settings:
