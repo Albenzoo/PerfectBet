@@ -1,5 +1,14 @@
 # PerfectBet :soccer: :moneybag:
 PerfectBet, an Angular web app designed to help users identify profitable football bet arbitrage opportunities, fetches odds from various bookmakers and compares them to find discrepancies that provide a risk-free way to bet on all possible outcomes of a match and still generate profit. This technique, commonly known as surebet, aims to make a profit regardless of the outcome of a match by betting on all available options through multiple bookmakers and exploiting the differences in odds between them.
+It’s common knowledge in the industry that bookmakers always set the odds in their favour and earn money by taking a margin of the odds offered. To illustrate this, imagine a betting site views the chance of an outcome at 50%. They should display odds of 1/1 (2.00) but in order to guarantee money is made, 9/10 (1.90) will instead be put forward.
+
+The betting site will then proceed to balance the investments on each side of a given bet by adjusting odds so they are always in the black.
+
+Exactly the same principle applies to a Sure Bet, the only difference being it’s you in control of the margin and not the bookies.
+
+By going between different bookmakers and coming across differing odds, you are able to set the margin in your favour.
+
+Take a look at this example 
 
 For example, suppose there are three bookmakers offering the following odds for a football match:
 
@@ -7,10 +16,6 @@ Team A: 2.75
 Team B: 5.4
 Draw: 3.3
 In this case, it is possible to bet on all options to guarantee a profit regardless of the outcome of the match.
-
-How does football betting arbitrage work?
-
-Football betting arbitrage works by betting on all available options through multiple bookmakers. This is done by exploiting the differences in odds between them, so that the amount of bets is balanced to ensure a profit regardless of the outcome of the match.
 
 For example, if you want to bet €207 on the aforementioned football match, you could bet €100 on Team A, €60 on Team B, and €47 on the Draw. In this way, regardless of the outcome of the match, you would make a profit.
 
@@ -33,6 +38,15 @@ Now, let’s assume that you have decided to wager as much as 100€. In order t
 - :chart_with_upwards_trend: Real-time updates for live matches and odds
 - :wrench: Customizable filters for preferred leagues and bookmakers
 - :desktop_computer: Mobile and desktop-friendly design
+
+## Risks and problems
+There are many risks that you need to know about:
+- Betting restrictions and limitations
+- Voided Bet/Bookmaker ‘Error’
+- Changing Odds
+The majority of betting sites have restrictions in place to control betting go above a certain amount. For instance, one betting site could have a limit of 500€, another 100€.
+
+The issue with this is you’re only likely to be notified that you can’t bet the amount intended after you’ve commited.
 
 ## Getting Started
 
