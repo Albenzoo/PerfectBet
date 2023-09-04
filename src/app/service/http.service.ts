@@ -10,7 +10,7 @@ import { promise } from 'protractor';
 export class HttpService {
   key:string = '';
   host = 'https://api.the-odds-api.com';
-  useMyKey: boolean = false;
+  useMyKey: boolean = true;
   mySeries = "";
   myRegion = "";
   urlAPI = "";
